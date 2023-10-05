@@ -76,3 +76,12 @@ a request for the resident  <br/>
 Ok(value=BodyComparisonResult(mismatches={$.torso.state=[BodyMismatch(expected=full, actual=bloated, mismatch=Expected 'bloated' to match '^(full|hungry)$', path=$.torso.state, diff=null)]}, diff=[{,   "eyes": {,     "state": "awake",   },,   "hair": {,     "state": "frizzled",   },,   "head": {, ,   },,   "legs": {, ,   },, -  "room": "kitchen",, +  "room": "bedroom",,   "torso": {, -    "state": "full", +    "state": "bloated",   }, }]))
 ```
 
+Notices:
+1. The pact at http://localhost:9292/pacts/provider/House/consumer/App/pact-version/3a316b26d60f230ad98bdd46f05c998334b1faf8 is being verified because the pact content belongs to the consumer version matching the following criterion:
+   * latest version of App that has a pact with House (2.0.1)
+
+From `Pact Broker http://localhost:9292/pacts/provider/House/consumer/App/pact-version/3a316b26d60f230ad98bdd46f05c998334b1faf8/metadata/c1tdW2xdPXRydWUmc1tdW2N2XT0xMw`<br/>
+a request for the resident  <br/>
+&nbsp;&nbsp;returns a response which  <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;has status code **200** (<span style='color:green'>OK</span>)  <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;has a matching body (<span style='color:green'>OK</span>)  <br/>

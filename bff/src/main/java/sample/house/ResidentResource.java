@@ -27,7 +27,7 @@ public class ResidentResource {
 
     private Resident createResident(String sessionId) {
         final Resident abby = new Resident();
-        abby.getTorso().setState("bloated");
+//        abby.getTorso().setState("bloated");
         residents.put(sessionId, abby);
         threadpool.submit(() -> wakeResident(abby));
         return abby;
