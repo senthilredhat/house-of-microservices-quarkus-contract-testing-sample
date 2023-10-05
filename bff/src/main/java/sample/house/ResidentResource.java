@@ -1,22 +1,21 @@
 package sample.house;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.CookieParam;
 import jakarta.ws.rs.GET;
-import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
-
+import jakarta.ws.rs.Produces;
 import sample.TrackerEntity;
 import sample.resident.Resident;
 import sample.rooms.Bathroom;
 import sample.rooms.Bedroom;
 import sample.rooms.Kitchen;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 @Path("/resident")
 public class ResidentResource {
@@ -28,6 +27,7 @@ public class ResidentResource {
 
     private Resident createResident(String sessionId) {
         final Resident abby = new Resident();
+        abby.getTorso().setState("bloated");
         residents.put(sessionId, abby);
         threadpool.submit(() -> wakeResident(abby));
         return abby;

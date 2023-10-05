@@ -12,6 +12,7 @@ pactWith(
     {
         consumer: 'App',
         provider: 'House',
+        tags: ['2.0.4']
     },
     (provider) => {
         beforeEach(() => {
@@ -47,9 +48,6 @@ pactWith(
                 },
                 willRespondWith: {
                     status: 200,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
                     body: matchyResult,
                 },
             };
